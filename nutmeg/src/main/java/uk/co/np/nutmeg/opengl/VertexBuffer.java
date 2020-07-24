@@ -20,7 +20,7 @@ public class VertexBuffer {
 		return Create(_Index, _Data, _Size, 0, 0);
 	}
 	
-	public VertexBuffer(int _ID) {
+	private VertexBuffer(int _ID) {
 		ID = _ID;
 		System.err.println("[Nutmeg] Creating VBO #"+ID);
 	}
