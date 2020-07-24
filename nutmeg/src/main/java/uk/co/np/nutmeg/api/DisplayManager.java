@@ -1,4 +1,4 @@
-package nutmeg;
+package uk.co.np.nutmeg.api;
 import static org.lwjgl.glfw.GLFW.*;
 
 import org.lwjgl.opengl.GL;
