@@ -6,13 +6,18 @@ import org.lwjgl.opengl.GL11;
 import static org.lwjgl.opengl.GL46.*;
 
 public class RenderCommand {
-	public static void ClearColor(Color c) {
-		GL11.glClearColor(c.getRed() / 255f, c.getGreen() / 255f, c.getBlue() / 255f, c.getAlpha() / 255f);
+	public static void ClearColor(Color _c) {
+		GL11.glClearColor(
+				_c.getRed() / 255f,
+				_c.getGreen() / 255f,
+				_c.getBlue() / 255f,
+				_c.getAlpha() / 255f
+		);
 	}
 	
-	public static void Clear(int... masks) {
+	public static void Clear(int... _masks) {
 		int mask = 0;
-		for(int i : masks) {
+		for(int i : _masks) {
 			mask |= i;
 		}
 		GL11.glClear(mask);
