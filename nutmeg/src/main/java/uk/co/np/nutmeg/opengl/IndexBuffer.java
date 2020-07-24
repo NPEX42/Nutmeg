@@ -5,6 +5,10 @@ import static org.lwjgl.opengl.GL46.*;
 
 import java.util.Arrays;
 
+/**
+ * @author George Venn
+ * @version V0.3.0-ALPHA
+ */
 public class IndexBuffer {
 	private int ID, vertexCount;
 	public void Bind() { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID); }
@@ -17,7 +21,7 @@ public class IndexBuffer {
 		return buffer;
 	}
 	
-	public IndexBuffer(int _ID, int _VertexCount) {
+	private IndexBuffer(int _ID, int _VertexCount) {
 		ID = _ID;
 		vertexCount = _VertexCount;
 		System.err.println("[Nutmeg] Creating IBO #"+ID);
