@@ -5,7 +5,7 @@ import java.awt.Color;
 import org.lwjgl.opengl.GL11;
 import static org.lwjgl.opengl.GL46.*;
 
-public class RendererCommand {
+public class RenderCommand {
 	public static void ClearColor(Color c) {
 		GL11.glClearColor(c.getRed() / 255f, c.getGreen() / 255f, c.getBlue() / 255f, c.getAlpha() / 255f);
 	}
@@ -20,5 +20,12 @@ public class RendererCommand {
 	
 	
 	public static final int
-	RC_COLOR_BUFFER = GL_COLOR_BUFFER_BIT;
+	RC_COLOR_BUFFER = GL_COLOR_BUFFER_BIT,
+	RC_UINT_32 = GL_UNSIGNED_INT,
+	RC_UINT_16 = GL_UNSIGNED_SHORT,
+	RC_UINT_8  = GL_UNSIGNED_BYTE,
+	RC_INT_32 = GL_INT,
+	RC_INT_16 = GL_SHORT,
+	RC_INT_8  = GL_BYTE,
+	RC_FLOAT_32 = GL_FLOAT;
 }

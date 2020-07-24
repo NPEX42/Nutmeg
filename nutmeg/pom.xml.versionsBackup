@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.co.np</groupId>
   <artifactId>nutmeg</artifactId>
-  <version>0.2.0-ALPHA</version>
+  <version>0.1.0-ALPHA</version>
   <name>Nutmeg</name>
   	<properties>
 		<lwjgl.version>3.2.3</lwjgl.version>
