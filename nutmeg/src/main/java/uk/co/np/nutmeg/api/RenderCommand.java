@@ -3,6 +3,9 @@ package uk.co.np.nutmeg.api;
 import java.awt.Color;
 
 import org.lwjgl.opengl.GL11;
+
+import uk.co.np.nutmeg.opengl.VertexArray;
+
 import static org.lwjgl.opengl.GL46.*;
 
 public class RenderCommand {
@@ -32,5 +35,12 @@ public class RenderCommand {
 	RC_INT_32 = GL_INT,
 	RC_INT_16 = GL_SHORT,
 	RC_INT_8  = GL_BYTE,
-	RC_FLOAT_32 = GL_FLOAT;
+	RC_FLOAT_32 = GL_FLOAT,
+	RC_MODE_TRIANGLES = GL_TRIANGLES;
+
+
+	public static void DrawIndexed(VertexArray _VAO, int _VertexCount, int _Offset) {
+		_VAO.Bind();
+		glDrawElements(RC_MODE_TRIANGLES, _VertexCount, RC_UINT_32, _Offset);
+	}
 }

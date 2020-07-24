@@ -5,6 +5,7 @@ import java.awt.Color;
 import uk.co.np.nutmeg.api.DisplayManager;
 import uk.co.np.nutmeg.api.Mesh;
 import uk.co.np.nutmeg.api.RenderCommand;
+import uk.co.np.nutmeg.api.Renderer;
 
 public class DisplayExample {
 	public static void main(String[] _args) {
@@ -13,6 +14,7 @@ public class DisplayExample {
 		while(DisplayManager.Update()) {
 			RenderCommand.ClearColor(Color.blue);
 			RenderCommand.Clear(RenderCommand.RC_COLOR_BUFFER);
+			RenderCommand.DrawIndexed(mesh.GetVAO(), 6, 0);
 		}
 		DisplayManager.Destroy();
 	}

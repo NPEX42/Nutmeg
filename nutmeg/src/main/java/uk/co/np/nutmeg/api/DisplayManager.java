@@ -2,6 +2,7 @@ package uk.co.np.nutmeg.api;
 import static org.lwjgl.glfw.GLFW.*;
 
 import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GLUtil;
 public class DisplayManager {
 	private static long windowID;
 	public static void Open(int _width, int _height, String _title) {
@@ -9,6 +10,7 @@ public class DisplayManager {
 		windowID = glfwCreateWindow(_width, _height, _title, 0, 0);
 		glfwMakeContextCurrent(windowID);
 		GL.createCapabilities();
+		GLUtil.setupDebugMessageCallback();
 	}
 	
 	public static boolean Update() {

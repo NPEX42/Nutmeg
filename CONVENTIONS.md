@@ -9,7 +9,7 @@
 - The fist letter of any word in a name MUST be in all caps;
 - Names MUST be self-Describing without any documentation
 -  function parameter Variables MUST be prefixed with _
-- Names MUST NOT contain a _ inside EXCEPT in the case of a function parameter variable, in which case the next character MUST be Capitalised OR in the case of a CONSTANT in which word MUST be separated be an _
+- Names MUST NOT contain a _ inside EXCEPT in the case of a function parameter variable, in which case the next character CAN be Capitalised OR in the case of a CONSTANT in which words MUST be separated be an _
 - A Constant MUST 
 
 ### Valid:
