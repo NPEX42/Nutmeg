@@ -18,6 +18,10 @@ public class RenderCommand {
 		);
 	}
 	
+	public static void ClearColor(float[] color) {
+		GL11.glClearColor(color[0],color[1],color[2],color[3]);
+	}
+	
 	public static void Clear(int... _masks) {
 		int mask = 0;
 		for(int i : _masks) {
@@ -42,5 +46,9 @@ public class RenderCommand {
 	public static void DrawIndexed(VertexArray _VAO, int _VertexCount, int _Offset) {
 		_VAO.Bind();
 		glDrawElements(RC_MODE_TRIANGLES, _VertexCount, RC_UINT_32, _Offset);
+	}
+
+	public static void ResizeViewport(int _Width, int _Height) {
+		glViewport(0, 0, _Width, _Height);
 	}
 }

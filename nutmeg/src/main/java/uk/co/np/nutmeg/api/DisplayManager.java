@@ -1,6 +1,8 @@
 package uk.co.np.nutmeg.api;
 import static org.lwjgl.glfw.GLFW.*;
 import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GL46;
+import org.lwjgl.opengl.GLDebugMessageARBCallback;
 import org.lwjgl.opengl.GLUtil;
 public class DisplayManager {
 	private static long windowID;
@@ -10,7 +12,7 @@ public class DisplayManager {
 		windowID = glfwCreateWindow(_width, _height, _title, 0, 0);
 		glfwMakeContextCurrent(windowID);
 		GL.createCapabilities();
-		GLUtil.setupDebugMessageCallback();
+		//GLUtil.setupDebugMessageCallback();
 		
 		width = _width;
 		height = _height;
@@ -19,6 +21,8 @@ public class DisplayManager {
 			width = w;
 			height = h;
 		});
+		GL46.glEnable(GL46.GL_DEBUG_OUTPUT);
+		GL46.glDebugMessageCallback(new GLMessageCallBack(), 0l);
 		
 	}
 	
@@ -45,7 +49,16 @@ public class DisplayManager {
 		return height;
 	}
 	
-	
+	private static class GLMessageCallBack implements IGLDebugger {
+
+		@Override
+		public void invoke(int source, int type, int id, int severity, int length, long message, long userParam) {
+			if(id != 131185) { //Filter Out Buffer Binding Info Message
+				System.err.println("[OPENGL] ID: "+id+" | "+GLDebugMessageARBCallback.getMessage(length, message));
+			}
+		}
+		
+	}
 	
 	
 }

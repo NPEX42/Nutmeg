@@ -144,6 +144,11 @@ public class Shader {
 		glUniform1fv(GetUniform(_Name), _Values);
 	}
 	
+	public void UploadInts(String _Name, int[] _Values) {
+		Bind();
+		glUniform1iv(GetUniform(_Name), _Values);
+	}
+	
 	public void UploadColor(String _Name, Color _C) {
 		UploadVec4f(_Name,
 				_C.getRed() / 255f,
